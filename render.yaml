@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: nginx-reverse-proxy
+    runtime: image
+    repo: https://github.com/masikari/nginx-reverse-proxy
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 80
