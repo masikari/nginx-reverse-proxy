@@ -7,6 +7,12 @@ services:
     region: oregon
     dockerfilePath: ./Dockerfile
     healthCheckPath: /health
+    # CRITICAL: Disable HTTPS redirect
     envVars:
       - key: PORT
         value: 80
+      - key: FORCE_HTTPS
+        value: "false"
+    # Alternative: Use HTTP-only domain
+    domains:
+      - type: http
